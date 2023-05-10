@@ -26,7 +26,7 @@ class _SplashyScreenState extends ConsumerState<SplashyScreen> {
       showLoader: true,
       loadingText: Text("Loading..."),
       navigator: MainScreen(),
-      durationInSeconds: 10,
+      durationInSeconds: 5,
     );
   }
 }

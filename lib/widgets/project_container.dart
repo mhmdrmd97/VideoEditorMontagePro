@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:video_editor/Logic/CreateScreen/CreateScreenModels/create_screen_projects_cards_model.dart';
 import 'package:video_editor/Logic/CreateScreen/create_screen_collector.dart';
 import 'package:video_editor/Logic/CreateScreen/create_screen_renderer.dart';
+import 'package:video_editor/Theme/theme_global.dart';
 import 'package:video_editor/screens/create_project_screen.dart';
 
 class ProjectContainer extends ConsumerStatefulWidget {
@@ -23,7 +24,7 @@ class _ProjectContainerState extends ConsumerState<ProjectContainer> {
           
         },
         child: Card(
-          shadowColor: Colors.white,
+          shadowColor: ThemeGlobal.selectedTheme.textColor,
           color: const Color.fromARGB(255, 19, 21, 23),
           child: ListTile(
             leading: Image(image: AssetImage(widget.project.image)),
@@ -46,20 +47,20 @@ class _ProjectContainerState extends ConsumerState<ProjectContainer> {
                       )),
                   IconButton(
                       onPressed: () {},
-                      icon: const Icon(
+                      icon:  Icon(
                         Icons.edit,
-                        color: Colors.white,
+                        color: ThemeGlobal.selectedTheme.textColor,
                       )),
                 ],
               ),
             ),
             title: Text(
               widget.project.title,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: ThemeGlobal.selectedTheme.textColor),
             ),
             subtitle: Text(
               widget.project.subTitle,
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: ThemeGlobal.selectedTheme.textColor),
             ),
           ),
         ),

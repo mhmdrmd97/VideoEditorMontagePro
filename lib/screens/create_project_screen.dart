@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:video_editor/Logic/CreateScreen/CreateScreenModels/create_screen_projects_cards_model.dart';
 import 'package:video_editor/Logic/CreateScreen/create_screen_collector.dart';
+import 'package:video_editor/Logic/MixinScreen/MixinScreenModels/Scene_Viewer_Model.dart';
+import 'package:video_editor/Theme/theme_global.dart';
 import 'package:video_editor/widgets/project_name_textfield.dart';
 
 class CreateProjectScreen extends ConsumerStatefulWidget {
@@ -25,7 +27,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
             padding: const EdgeInsets.symmetric(vertical: 18.0),
             child: FloatingActionButton.extended(
                 heroTag: "${Random().nextInt(30000)}",
-                backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+                backgroundColor: ThemeGlobal.selectedTheme.bgColor,
                 onPressed: () {},
                 label: Row(
                   children: [
@@ -35,10 +37,10 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                 )),
           )
         ],
-        backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+        backgroundColor: ThemeGlobal.selectedTheme.bgColor,
         centerTitle: true,
       ),
-      backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+      backgroundColor: ThemeGlobal.selectedTheme.bgColor,
       body: Column(
         children: [
           Expanded(
@@ -51,22 +53,22 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                       const SizedBox(
                         height: 40,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(18.0),
+                       Padding(
+                        padding: const EdgeInsets.all(18.0),
                         child: Text(
                           "Project Name",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+                          style: TextStyle(color: ThemeGlobal.selectedTheme.textColor, fontSize: 20),
                         ),
                       ),
                       ProjectNameTextField(project: widget.project,),
                       const SizedBox(
                         height: 10,
                       ),
-                      const Padding(
-                        padding: EdgeInsets.all(18.0),
+                       Padding(
+                        padding: const EdgeInsets.all(18.0),
                         child: Text(
                           "Aspect Ratio",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: ThemeGlobal.selectedTheme.textColor),
                         ),
                       ),
                       Wrap(
@@ -81,16 +83,17 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                                 
                               },
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
+                                backgroundColor: ThemeGlobal.selectedTheme.textColor,
                                 radius: 52.0,
                                 child: CircleAvatar(
-                                  backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+                                  backgroundColor: ThemeGlobal.selectedTheme.bgColor,
                                   radius: 50.0,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                     Icon(Icons.airplay_rounded),
-                                    Text("16:9")
+                                    Text("${AspectRatios.youtube.name}",style: TextStyle(fontSize: 10,),),
+                                    Text("${AspectRatios.youtube.value}")
                                   ],),
                                 ),
                               ),
@@ -106,16 +109,17 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                                 
                               },
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
+                                backgroundColor: ThemeGlobal.selectedTheme.textColor,
                                 radius: 52.0,
                                 child: CircleAvatar(
-                                  backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+                                  backgroundColor: ThemeGlobal.selectedTheme.bgColor,
                                   radius: 50.0,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                     Icon(Icons.airplay_rounded),
-                                    Text("9:16")
+                                    Text("${AspectRatios.tiktok.name}",style: TextStyle(fontSize: 10,),),
+                                    Text("${AspectRatios.tiktok.value}")
                                   ],),
                                 ),
                               ),
@@ -131,16 +135,17 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                                 
                               },
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
+                                backgroundColor: ThemeGlobal.selectedTheme.textColor,
                                 radius: 52.0,
                                 child: CircleAvatar(
-                                  backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+                                  backgroundColor: ThemeGlobal.selectedTheme.bgColor,
                                   radius: 50.0,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                     Icon(Icons.airplay_rounded),
-                                    Text("1:1")
+                                    Text("${AspectRatios.instagram.name}",style: TextStyle(fontSize: 10,),),
+                                    Text("${AspectRatios.instagram.value}")
                                   ],),
                                 ),
                               ),
@@ -156,16 +161,17 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                                 
                               },
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
+                                backgroundColor: ThemeGlobal.selectedTheme.textColor,
                                 radius: 52.0,
                                 child: CircleAvatar(
-                                  backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+                                  backgroundColor: ThemeGlobal.selectedTheme.bgColor,
                                   radius: 50.0,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                     Icon(Icons.airplay_rounded),
-                                    Text("4:3")
+                                    Text("${AspectRatios.paperL.name}",style: TextStyle(fontSize: 10,),),
+                                    Text("${AspectRatios.paperL.value}")
                                   ],),
                                 ),
                               ),
@@ -181,16 +187,17 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                                 
                               },
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
+                                backgroundColor: ThemeGlobal.selectedTheme.textColor,
                                 radius: 52.0,
                                 child: CircleAvatar(
-                                  backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+                                  backgroundColor: ThemeGlobal.selectedTheme.bgColor,
                                   radius: 50.0,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                     Icon(Icons.airplay_rounded),
-                                    Text("3:4")
+                                    Text("${AspectRatios.paperP.name}",style: TextStyle(fontSize: 10,),),
+                                    Text("${AspectRatios.paperP.value}")
                                   ],),
                                 ),
                               ),
@@ -205,16 +212,17 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                                 
                               },
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
+                                backgroundColor: ThemeGlobal.selectedTheme.textColor,
                                 radius: 52.0,
                                 child: CircleAvatar(
-                                  backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+                                  backgroundColor: ThemeGlobal.selectedTheme.bgColor,
                                   radius: 50.0,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                     Icon(Icons.airplay_rounded),
-                                    Text("4:5")
+                                    Text("${AspectRatios.facebook.name}",style: TextStyle(fontSize: 10,),),
+                                    Text("${AspectRatios.facebook.value}")
                                   ],),
                                 ),
                               ),
@@ -229,16 +237,17 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                                 
                               },
                               child: CircleAvatar(
-                                backgroundColor: Colors.white,
+                                backgroundColor: ThemeGlobal.selectedTheme.textColor,
                                 radius: 52.0,
                                 child: CircleAvatar(
-                                  backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+                                  backgroundColor: ThemeGlobal.selectedTheme.bgColor,
                                   radius: 50.0,
                                   child: Column(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
                                     Icon(Icons.airplay_rounded),
-                                    Text("2.35:1")
+                                    Text("${AspectRatios.cenimaScope.name}",style: TextStyle(fontSize: 10,),),
+                                    Text("${AspectRatios.cenimaScope.value}")
                                   ],),
                                 ),
                               ),
@@ -260,7 +269,7 @@ class _CreateProjectScreenState extends ConsumerState<CreateProjectScreen> {
                   width: MediaQuery.of(context).size.width,
                   child: FloatingActionButton.extended(
                       heroTag: "${Random().nextInt(30000)}",
-                      backgroundColor: Colors.red[700],
+                      backgroundColor: ThemeGlobal.selectedTheme.buttonbgColor,
                       onPressed: () {},
                       label: const Text(
                         "create",

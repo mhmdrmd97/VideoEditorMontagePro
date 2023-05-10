@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:video_editor/Logic/CreateScreen/CreateScreenModels/create_screen_projects_cards_model.dart';
 import 'package:video_editor/Logic/CreateScreen/create_screen_collector.dart';
 import 'package:video_editor/Logic/CreateScreen/create_screen_renderer.dart';
+import 'package:video_editor/Theme/theme_global.dart';
 import 'package:video_editor/screens/create_project_screen.dart';
 import 'package:video_editor/widgets/create_project_container.dart';
 import 'package:video_editor/widgets/lists/list_projects.dart';
@@ -22,7 +23,7 @@ class _CreateScreenState extends ConsumerState<CreateScreen> {
     final createScreenAllWatcher = ref.watch(createScreenAllRenderer);
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 19, 21, 23),
+      backgroundColor: ThemeGlobal.selectedTheme.bgColor,
       body: Column(children: [
         Expanded(
           flex: 1,

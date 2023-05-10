@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:video_editor/Logic/CreateScreen/CreateScreenModels/create_screen_projects_cards_model.dart';
+import 'package:video_editor/Theme/theme_global.dart';
 
 class ProjectNameTextField extends ConsumerStatefulWidget {
    ProjectNameTextField({
@@ -29,7 +30,7 @@ class _ProjectNameTextFieldState extends ConsumerState<ProjectNameTextField> {
               .setText(newProjectName: value);
           });
         },
-        style: const TextStyle(color: Colors.white),
+        style:  TextStyle(color: ThemeGlobal.selectedTheme.textColor),
         decoration: InputDecoration(
             hintText: "Enter Project Name",
             hintStyle: const TextStyle(
@@ -41,10 +42,10 @@ class _ProjectNameTextFieldState extends ConsumerState<ProjectNameTextField> {
               borderRadius: BorderRadius.circular(32),
             ),
             enabledBorder: OutlineInputBorder(
-                borderSide: const BorderSide(color: Colors.white, width: 1.0),
+                borderSide:  BorderSide(color: ThemeGlobal.selectedTheme.textColor, width: 1.0),
                 borderRadius: BorderRadius.circular(32.0)),
             focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.red[700]!, width: 2.0),
+                borderSide: BorderSide(color: ThemeGlobal.selectedTheme.buttonbgColor, width: 2.0),
                 borderRadius: BorderRadius.circular(32.0))),
       ),
     );
