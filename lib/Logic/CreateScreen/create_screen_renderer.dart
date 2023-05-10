@@ -10,3 +10,8 @@ final createScreenListProjectsRenderer =
     StateNotifierProvider<GlobalNotifier, bool>((ref) {
   return GlobalNotifier();
 });
+
+final createScreenListButtonRenderer =
+    StateNotifierProvider<GlobalNotifier, bool>((ref) {
+  return GlobalNotifier();
+});
